@@ -1,0 +1,15 @@
+import yaml
+
+# 读取配置文件
+with open('your_config_file.yaml', 'r') as file:
+    config_data = yaml.safe_load(file)
+
+# 提取配置信息
+version = config_data.get('version', 'Unknown Version')
+code_owners = config_data.get('codeOwners', [])
+quorum = config_data.get('quorum', 0)
+
+# 输出信息
+print(f"版本号: {version}")
+print(f"代码所有者: {code_owners}")
+print(f"最低投票数: {quorum}")
